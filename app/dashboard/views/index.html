@@ -1,0 +1,61 @@
+﻿<div ng-controller="DashboardController">
+
+    <super-navbar>
+        <super-navbar-title>
+            Dashboard
+        </super-navbar-title>
+        <!-- Button on right side of the navigation bar -->
+        <super-navbar-button side="right" view-id="drawer">Settings</super-navbar-button>
+
+        <!--<super-navigate-button side="right">
+            Settings
+        </super-navigate-button>-->
+        <!--<super-navbar-button side="left" location="drawer#content">
+            <i class="icon icon-accessory super-chevron-right">Settings</i>
+            
+        </super-navbar-button>-->
+       
+    </super-navbar>
+    <div>
+        {{hello}}
+    </div>
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+        <!--<ul class="list" ng-hide="organizations.length == 0">
+
+            <li class="item">-->
+        <!--<div class="row responsive-sm">
+            <div class="col">
+                <div class="list card" data-params-id="{{ organization.id }}" ng-repeat="organization in organizations">
+
+                    <h1>{{hello}}</h1>
+                    <super-navigate location="organization#show" data-params-id="{{ organization.id }}">
+                        <div class="item item-image">
+
+
+                            <img ng-src="http://placehold.it/200x200">
+                        </div>
+                    </super-navigate>
+
+                    <super-navigate location="map#index">
+
+                        <div class="item">
+                            <h2>{{ organization.Name }}</h2>
+                            <h3>to maps</h3>
+                        </div>
+
+                    </super-navigate>
+
+                </div>
+
+            </div>
+        </div>-->
+        <!--</li>
+        </ul>-->
+
+    </div>
+
+    <h4 ng-show="organizations.length == 0" class="assertive padding">
+        No organizations found.
+    </h4>
+</div>

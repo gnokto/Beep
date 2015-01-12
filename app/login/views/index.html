@@ -1,0 +1,45 @@
+﻿<form name="loginForm"  ng-controller="LoginController">
+
+    <div class="list">
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Email</span>
+            <input ng-model="email" name="email" type="email" placeholder="Email" required>
+
+        </label>
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Password</span>
+            <input ng-model="password" name="password" type="password" placeholder="Password" required>
+        </label>
+
+    </div>
+    <div ng-show="loginForm.$submitted  || loginForm.email.$touched">
+        <div>
+            <span ng-show="loginForm.email.$error.required">Enter your email.</span>
+            <span ng-show="loginForm.email.$error.email">This is not a valid email.</span>
+        </div>
+    </div>
+    <div ng-show="loginForm.$submitted || loginForm.password.$touched">
+
+        <div>
+            <span ng-show="loginForm.password.$error.required">Enter your password</span>
+        </div>
+    </div>
+    <div ng-model="errorMessage" ng-show="loginForm.$submitted && loginForm.$dirty">
+        <div>
+            <span>{{ errorMessage }}</span>
+        </div>
+    </div>
+
+    <div ng-show="isLoggedIn()">
+        <span>Your are logged In</span>
+        <button class="button button-block button-positive" ng-click="logout()">Logout</button>
+    </div>
+
+    <div class="padding">
+        <input type="submit" class="button button-block button-positive" ng-click="login(loginForm)" value="Login" />
+        <input type="submit" class="button button-block button-light" ng-click="register(loginForm)" value="register"/>  
+        <input type="submit" class="button button-block button-light" ng-click="continue()" value="continue"/>  
+    </div>
+
+
+</form>
